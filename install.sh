@@ -127,9 +127,9 @@ install(){
     }
 EOF
     )
-	echo "配置链接："
+    echo "配置链接："
     echo vmess://${VMESSCODE}
-
+    echo 导入后请修改"服务器地址"为你的应用的域名
 }
 
 clone_repo
