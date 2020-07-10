@@ -59,7 +59,7 @@ EOF
 		    "connIdle": 60,
 		    "uplinkOnly": 0,
 		    "downlinkOnly": 0,
-		    "bufferSize": 16
+		    "bufferSize": 1024
 		}
 	    }
 	}
