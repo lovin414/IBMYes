@@ -51,7 +51,18 @@ EOF
                 "protocol": "freedom",
                 "settings": {}
             }
-        ]
+        ],
+	"policy": {
+	    "levels": {
+	        "0": {
+		    "handshake": 5,
+		    "connIdle": 60,
+		    "uplinkOnly": 0,
+		    "downlinkOnly": 0,
+		    "bufferSize": 16
+		}
+	    }
+	}
     }
 EOF
     echo "配置完成。"
