@@ -1,3 +1,9 @@
+## 本项目在[原项目](https://github.com/CCChieh/IBMYes)的基础上新增有：
++ 自动查找最新版本的V2Ray-core进行安装
++ 生成随机UUID以及Websocket Path并自动配置
++ 安装结束后在IBM shell中输出相应的vmess链接以方便用户配置
++ 在服务端配置中新增[本地策略](https://www.v2fly.org/chapter_02/policy.html)，优化了连接质量，减少不必要的资源占用
+
 # IBMYes
 
 本项目包括3部分
