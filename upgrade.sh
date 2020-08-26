@@ -20,11 +20,12 @@ create_mainfest_file(){
       memory: ${IBM_MEM_SIZE}M
 EOF
 
-	echo "下载已有配置..请稍等"
+    echo "下载已有配置..请稍等"
+    ibmcloud target --cf
     ibmcloud cf ssh ${IBM_APP_NAME} -c "cat /home/vcap/app/v2ray/config.json" > config.json
-	sed -i 1d config.json
-	sed -i 1d config.json
-	mv config.json ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/
+    sed -i 1d config.json
+    sed -i 1d config.json
+    mv config.json ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/
     echo "处理完毕，开始推送..."
 }
 
@@ -65,7 +66,6 @@ clone_repo(){
 install(){
     echo "进行安装。。。"
     cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
-    ibmcloud target --cf
     ibmcloud cf push
     echo "安装完成。"
 }
