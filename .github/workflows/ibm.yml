@@ -27,8 +27,8 @@ jobs:
         ./IBM_Cloud_CLI/ibmcloud login <<EOF
         $IBM_ACCOUNT
         $REGION_NUM
-        no
-        EOF
+        n
+        n
     - name: Target IBM Cloud
       env:
         RESOURSE_ID: ${{ secrets.RESOURSE_ID }}
