@@ -25,45 +25,45 @@ create_mainfest_file(){
 EOF
 
     cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/config.json  << EOF
-    {
-        "inbounds": [
-            {
-                "port": 8080,
-                "protocol": "vmess",
-                "settings": {
-                    "clients": [
-                        {
-                            "id": "${UUID}",
-                            "alterId": 4
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network":"ws",
-                    "wsSettings": {
-                        "path": "${WSPATH}"
+{
+    "inbounds": [
+        {
+            "port": 8080,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "${UUID}",
+                        "alterId": 4
                     }
+                ]
+            },
+            "streamSettings": {
+                "network":"ws",
+                "wsSettings": {
+                    "path": "${WSPATH}"
                 }
             }
-        ],
-        "outbounds": [
-            {
-                "protocol": "freedom",
-                "settings": {}
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ],
+    "policy": {
+        "levels": {
+            "0": {
+                "handshake": 5,
+                "connIdle": 60,
+                "uplinkOnly": 0,
+                "downlinkOnly": 0,
+                "bufferSize": 1024
             }
-        ],
-	"policy": {
-	    "levels": {
-	        "0": {
-		    "handshake": 5,
-		    "connIdle": 60,
-		    "uplinkOnly": 0,
-		    "downlinkOnly": 0,
-		    "bufferSize": 1024
-		}
-	    }
-	}
+        }
     }
+}
 EOF
     echo "配置完成。"
 }
