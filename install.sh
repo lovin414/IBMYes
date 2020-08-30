@@ -127,19 +127,19 @@ install(){
     echo "UUID: ${UUID}"
     echo "WebSocket路径: ${WSPATH}"
     VMESSCODE=$(base64 -w 0 << EOF
-    {
-      "v": "2",
-      "ps": "ibmyes",
-      "add": "ibmyes.us-south.cf.appdomain.cloud",
-      "port": "443",
-      "id": "${UUID}",
-      "aid": "4",
-      "net": "ws",
-      "type": "none",
-      "host": "",
-      "path": "${WSPATH}",
-      "tls": "tls"
-    }
+{
+  "v": "2",
+  "ps": "${IBM_APP_NAME}",
+  "add": "${IBM_APP_NAME}.us-south.cf.appdomain.cloud",
+  "port": "443",
+  "id": "${UUID}",
+  "aid": "4",
+  "net": "ws",
+  "type": "none",
+  "host": "",
+  "path": "${WSPATH}",
+  "tls": "tls"
+}
 EOF
     )
     echo "配置链接："
