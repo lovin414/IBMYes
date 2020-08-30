@@ -2,9 +2,10 @@ name: IBM Cloud Auto Restart
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: 
+    - master
+    - hiiragiyuriko-install.sh
+  
   schedule:
     - cron: '00 23 * * Thu'
 
